@@ -98,7 +98,6 @@ const Letters = ({ words, colors }: LettersProps) => {
 
 interface Props {
   handleClick: (e: React.MouseEvent) => void;
-  href: string;
 }
 
 const Hero = ({ handleClick }: Props) => {
