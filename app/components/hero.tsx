@@ -112,7 +112,7 @@ const Hero = ({ handleClick }: Props) => {
   return (
     <>
       <div className="hero-container">
-        <div className="hero-content">
+        <div className="heroContent">
           <div className="hero-title ">
             <h1>Hi, I am&nbsp;</h1>
             <span>
@@ -126,6 +126,7 @@ const Hero = ({ handleClick }: Props) => {
               <i>love</i> it.{" "}
             </p>
           </div>
+
           <div id="container">
             <button className="learn-more">
               <span className="circle" aria-hidden="true">

@@ -23,15 +23,15 @@ export default function Home() {
 
   return (
     <>
-      <StickyHeader />
-      <Hero handleClick={handleClick} />
-      <div className="main-container gray1-bg">
-        <About />
-        <Contact />
-        <Footer />
+      {/* <StickyHeader /> */}
+      {/* <Hero handleClick={handleClick} /> */}
+      {/* <div className="main-container gray1-bg"> */}
+      <About />
+      <Contact />
+      {/* <Footer /> */}
 
-        <div className="karm"></div>
-      </div>
+      {/* <div className="karm"></div> */}
+      {/* </div> */}
     </>
   );
 }

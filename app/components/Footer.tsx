@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <>
       <footer>
-        <div className="socials-footer">
+        {/* <div className="socials-footer">
           <div className="icon-container">
             <FontAwesomeIcon
               className="social-icon"
@@ -49,7 +49,7 @@ const Footer = () => {
               icon={faLinkedin}
             />
           </div>
-        </div>
+        </div> */}
         <div className="footer-text">
           <p>© 2021 - All rights reserved</p>
         </div>

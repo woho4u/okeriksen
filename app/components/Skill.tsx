@@ -5,7 +5,11 @@ interface Props {
 }
 
 const Skill = ({ title }: Props) => {
-  return <div className="testest bg-gray-800">{title}</div>;
+  return (
+    <div className="testest offwhite gray1-bg border-primaryRed border-2">
+      {title}
+    </div>
+  );
 };
 
 export default Skill;
