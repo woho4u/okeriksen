@@ -7,6 +7,8 @@ import Footer from "./components/Footer";
 import "../lib/fontawesome";
 import Contact from "./components/Contact";
 import About from "./components/About";
+import Stats from "./components/Stats";
+import Title from "./components/Title";
 
 export default function Home() {
   function handleClick(e: React.MouseEvent) {
@@ -23,15 +25,18 @@ export default function Home() {
 
   return (
     <>
-      {/* <StickyHeader /> */}
-      {/* <Hero handleClick={handleClick} /> */}
-      {/* <div className="main-container gray1-bg"> */}
+      <StickyHeader />
+      <Hero handleClick={handleClick} />
+      <div className="main-container gray1-bg">
+      <Title title="hiehei"/>
       <About />
+      <Stats/>
       <Contact />
-      {/* <Footer /> */}
+      <Footer />
+      
 
-      {/* <div className="karm"></div> */}
-      {/* </div> */}
+      <div className="karm"></div>
+      </div>
     </>
   );
 }

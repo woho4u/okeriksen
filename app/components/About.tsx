@@ -118,7 +118,7 @@ const About = () => {
           <div>
             <div className="flex justify-center flex-wrap flex-row w-full mt-40">
               <div className="skills-block xl:w-1/2 w-full min-w-96 mt-20">
-                <h3 className="w-full text-center mb-7">Development skills</h3>
+                <h3 className="w-full xl:text-left text-center mb-7">Development skills</h3>
                 <div className="skills px-6 flex flex-wrap">
                   {devSkills.map((skill) => (
                     <Skill title={skill} key={skill} />
@@ -127,7 +127,7 @@ const About = () => {
               </div>
 
               <div className="skills-block xl:w-1/2 w-full min-w-96 mt-20">
-                <h3 className="w-full text-center mb-7">Design skills</h3>
+                <h3 className="w-full xl:text-left text-center mb-7">Design skills</h3>
                 <div className="skills px-6 flex flex-wrap">
                   {designSkills.map((skill) => (
                     <Skill title={skill} key={skill} />
