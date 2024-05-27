@@ -9,7 +9,7 @@ const ScrollIndicator = () => {
       <span className="scroll">O</span>
       <span className="scroll">L</span>
       <span className="scroll">L</span>
-      <div className="flex content-center flex-column w-full absolute">
+      <div className="flex content-center flex-column w-full">
         <div className="scroll-line mx-auto mt-2 w-full relative"></div>
       </div>
     </span>

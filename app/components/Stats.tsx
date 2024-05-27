@@ -20,9 +20,7 @@ const Stats = () => {
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
                 deleniti molestias et repudiandae inventore animi officia id,
                 sunt cum eveniet voluptas ipsa Lorem ipsum dolor sit amet
-                consectetur, adipisicing elit. Quis harum, laboriosam numquam
-                illo nemo quae molestias repellendus modi voluptates officia,
-                excepturi pariatur
+                consectetur,
               </p>
             </div>
 

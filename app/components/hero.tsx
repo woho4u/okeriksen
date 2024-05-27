@@ -96,11 +96,19 @@ const Letters = ({ words, colors }: LettersProps) => {
   );
 };
 
-interface Props {
-  handleClick: (e: React.MouseEvent) => void;
-}
+const Hero = () => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const aboutMeElement = document.getElementById("about-me");
+    if (aboutMeElement) {
+      const top = aboutMeElement.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: top,
+        behavior: "smooth",
+      });
+    }
+  };
 
-const Hero = ({ handleClick }: Props) => {
   const words = [
     "Oliver Kvamme Eriksen.",
     "a Developer.",
@@ -127,12 +135,13 @@ const Hero = ({ handleClick }: Props) => {
             </p>
           </div>
 
-          <div id="container">
+          <div id="container" className="mt-7">
             <button className="learn-more">
               <span className="circle" aria-hidden="true">
                 <span className="icon arrow"></span>
               </span>
               <Olink
+                title="Learn more"
                 href="#about-me"
                 onClick={handleClick}
                 className="button-text"

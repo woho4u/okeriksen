@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 
@@ -6,9 +7,10 @@ interface Props {
   onClick: (e: React.MouseEvent) => void;
   scroll: boolean;
   className: string;
+  title: string;
 }
 
-const Olink = ({ href, onClick, scroll, className }: Props) => {
+const Olink = ({ href, onClick, scroll, className, title }: Props) => {
   return (
     <Link
       href={href}
@@ -16,7 +18,7 @@ const Olink = ({ href, onClick, scroll, className }: Props) => {
       scroll={scroll}
       className={className}
     >
-      About Me
+      {title}
     </Link>
   );
 };

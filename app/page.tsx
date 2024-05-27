@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import Hero from "./components/hero";
 import Header from "./components/header";
@@ -9,33 +8,20 @@ import Contact from "./components/Contact";
 import About from "./components/About";
 import Stats from "./components/Stats";
 import Title from "./components/Title";
+import Projects from "./components/Projects";
 
 export default function Home() {
-  function handleClick(e: React.MouseEvent) {
-    e.preventDefault();
-    const aboutMeElement = document.getElementById("about-me");
-    if (aboutMeElement) {
-      const top = aboutMeElement.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: top,
-        behavior: "smooth",
-      });
-    }
-  }
-
   return (
     <>
       <StickyHeader />
-      <Hero handleClick={handleClick} />
+      <Hero />
       <div className="main-container gray1-bg">
-      <Title title="hiehei"/>
-      <About />
-      <Stats/>
-      <Contact />
-      <Footer />
-      
+        <About />
+        <Stats />
 
-      <div className="karm"></div>
+        <Projects />
+        <Contact />
+        <Footer />
       </div>
     </>
   );
