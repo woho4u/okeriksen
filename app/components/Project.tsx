@@ -23,18 +23,16 @@ const Project = ({ projectName, para, imageAmount }: Props) => {
         <div className="separate-line w-52 mt-2"></div>
       </div>
 
-      <div className={`2xl:w- col1 flex ${paraState ? "justify-center" : ""}`}>
+      <div className={`2xl:w- col1 flex ${paraState ? "" : "justify-center"}`}>
         <div className="xl:w-fit pr-12 flex flex-col h-80">
           <div
             className={`project-header flex mt-4 ${paraState && "h-92"} h-80`}
           >
             <div className="flex flex-col ">
               {paraState === true ? (
-                <p className="lg:w-96 md:w-80 p-5">{para}</p>
+                <p className="lg:w-96 md:w-80 p-5 left-0">{para}</p>
               ) : (
-                <p className={` md:w-80 p-5 ${paraState ? "left-0" : ""}`}>
-                  {para}
-                </p>
+                <p className="md:w-80 p-5">{para}</p>
               )}
 
               <div id="container" className="ml-3">
@@ -59,19 +57,19 @@ const Project = ({ projectName, para, imageAmount }: Props) => {
                 className="h-full w-auto mx-2"
               />
               <div
-                className={`flex h-80 w-fit ${
-                  paraState == true ? "right-0" : "right-5"
-                } absolute`}
+                className={`flex h-80 w-fit z- absolute ${
+                  paraState == true
+                    ? "right-0 fkeslfkesjjk"
+                    : "jfkesjkfejskfjse"
+                }`}
               >
                 {Array.from({ length: imageAmount }, (_, i) => (
                   <img
                     key={i}
                     src={`${projectName}/${i + 1}.jpg`}
                     alt={`Image ${i + 1}`}
-                    className={`transition mx-1 w-auto h-full ${
-                      paraState == true
-                        ? "z-1 ml-20 opacity-100"
-                        : "z- opacity-100"
+                    className={`transition mx-5 w-auto h-full ${
+                      paraState == true ? "z-1 ml-1 opacity-100" : "opacity-100"
                     }`}
                   />
                 ))}
