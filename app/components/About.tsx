@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Skill from "./Skill";
 import Title from "./Title";
 import LinedSquare from "./LinedSquare";
+import Image from "next/image";
 
 const About = () => {
   const devSkills = [
@@ -100,7 +101,9 @@ const About = () => {
               </div>
               <div className="w-370 mt-12 para-container px-7">
                 <div className="relative about-img-container">
-                  <img
+                  <Image
+                    width={264}
+                    height={380}
                     src="me/fjell.jpg"
                     className="z-10 mt-10 about-img absolute"
                     alt=""

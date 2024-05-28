@@ -16,7 +16,10 @@ const Projects = () => {
 
   return (
     <>
-      <div id="projects" className="flex flex-col items-center w-full ">
+      <div
+        id="projects"
+        className="flex flex-col items-center w-full transition z-10"
+      >
         <Title className="projects" title="Projects" />
 
         {projects.map((projectName, index) => (

@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import Olink from "./Olink";
+import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   projectName: string;
@@ -11,81 +13,94 @@ interface Props {
 const Project = ({ projectName, para, imageAmount }: Props) => {
   const [paraState, setParaState] = React.useState(false);
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setParaState(!paraState);
   };
 
   return (
-    <div className="px-4 w-full mt-10">
-      <h3 className="w-full text-center">{projectName}</h3>
-      <div className="title text-center flex flex-col flex-wrap content-center">
-        <div className="separate-line w-52 mt-2"></div>
-      </div>
+    <>
+      <div className="px-4 w-full mt-20 transition">
+        <h3 className="w-full text-center">{projectName}</h3>
+        <div className="title text-center flex flex-col flex-wrap content-center">
+          <div className="separate-line w-52 mt-2"></div>
+        </div>
 
-      <div className={`2xl:w- col1 flex ${paraState ? "" : "justify-center"}`}>
-        <div className="xl:w-fit pr-12 flex flex-col h-80">
+        <div className={`2xl:w- col1 flex justify-center`}>
+          {/* {paraState === true ? (
+          <p className="lg:w-96 md:w-86 p-5 transition ">{para}</p>
+        ) : (
+          <p className="lg:w-86 md:w-80 p-5 transition ">{para}</p>
+        )} */}
           <div
-            className={`project-header flex mt-4 ${paraState && "h-92"} h-80`}
+            className={` ${
+              paraState === true ? "w-full" : "w-680"
+            }   pr-12 flex flex-col h-80 transition `}
           >
-            <div className="flex flex-col ">
-              {paraState === true ? (
-                <p className="lg:w-96 md:w-80 p-5 left-0">{para}</p>
-              ) : (
-                <p className="md:w-80 p-5">{para}</p>
-              )}
+            <div className={`project-header flex  mt-4 h-80`}>
+              <div className="flex flex-col z-20 gray1-bg">
+                {paraState === true ? (
+                  <p className="lg:w-96 md:w-86 p-5 transition ">{para}</p>
+                ) : (
+                  <p className="lg:w-96 md:w-80 p-5 transition ">{para}</p>
+                )}
 
-              <div id="container" className="ml-3">
-                <button className="learn-more">
-                  <span className="circle" aria-hidden="true">
-                    <span className="icon arrow"></span>
-                  </span>
-                  <Olink
-                    title="View All"
-                    href=""
-                    onClick={(e) => handleClick(e)}
-                    className="button-text"
-                    scroll={true}
-                  />
-                </button>
+                <div id="container" className="ml-3">
+                  <button className="learn-more">
+                    <span className="circle" aria-hidden="true">
+                      <span className="icon arrow"></span>
+                    </span>
+
+                    <Link
+                      href=""
+                      onClick={(e) => handleClick(e)}
+                      scroll={true}
+                      className={"button-text"}
+                    >
+                      View All
+                    </Link>
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className="flex relative">
-              <img
-                src={`${projectName}/forside.png`}
-                alt="Magazine cover"
-                className="h-full w-auto mx-2"
-              />
+              <div className="flex  relative z-20 gray1-bg">
+                <Image
+                  width={200}
+                  height={300}
+                  src={`${projectName}/forside.png`}
+                  alt="Magazine cover"
+                  className="h-full w-auto mx-2"
+                />
+              </div>
+
               <div
-                className={`flex h-80 w-fit z- absolute ${
+                className={`max-w-none flex h-80 w-fit absolute z-19 transition-all duration-1000 ease-in-out transform ${
                   paraState == true
-                    ? "right-0 fkeslfkesjjk"
-                    : "jfkesjkfejskfjse"
+                    ? "ml-full translate-x-0 opacity-100 right-0"
+                    : "ml-full project-translate opacity-100 right-0"
                 }`}
               >
                 {Array.from({ length: imageAmount }, (_, i) => (
-                  <img
+                  <Image
+                    width={200}
+                    height={300}
                     key={i}
                     src={`${projectName}/${i + 1}.jpg`}
                     alt={`Image ${i + 1}`}
-                    className={`transition mx-5 w-auto h-full ${
-                      paraState == true ? "z-1 ml-1 opacity-100" : "opacity-100"
-                    }`}
+                    className={` mx-5 w-auto h-full max-w-none transition-all duration-1000 ease-in-out
+                    ${paraState == true ? "opacity-100" : "opacity-0"}`}
                   />
                 ))}
               </div>
             </div>
-
-            {/* <img
-              src={`${projectName}/${index + 1}.jpg`}
-              alt="s"
-              className="lg:w-48 w-52"
-            />
-            {paraState == true ? null : null} */}
           </div>
         </div>
+        {/* <div
+        className={` ${paraState == true ? "w-80" : "w-full"}  p-5 transition `}
+      >
+        {para}
+      </div> */}
       </div>
-    </div>
+    </>
   );
 };
 

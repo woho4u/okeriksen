@@ -46,7 +46,6 @@ body {
   color: var(--foreground);
   background: var(--background);
   position: relative;
-  overflow-x: hidden;
 }
 
 html {
@@ -578,6 +577,21 @@ strong {
 	opacity: 0;	
 	transform: scale(0.1, 1);
 }
+
+
+.w-680 {
+  width: 680px;
+}
+
+.project-translate {
+  transform: translatex(-30%);
+}
+
+
+.duration-10000 {
+  animation-duration: 10s;
+}
+
 /* FOOTER --------------------------------------------------- */
 
 footer {
