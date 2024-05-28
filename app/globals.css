@@ -31,12 +31,14 @@
 
   --foreground: #24292e;
   --background: var(--gray1);
+
+  --foreground: #e9edee;
+  --background: var(--gray1);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground: #e9edee;
-    --background: var(--gray1);
+  /* :root { */
+    
   }
 }
 
@@ -49,6 +51,14 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.transition {
+  transition: all 0.6s!important;
+}
+
+.z- {
+  z-index: -1;
 }
 
 .karm {

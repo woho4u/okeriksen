@@ -8,7 +8,7 @@ interface Props {
 
 const LinedSquare = ({ className = "w-full", color, stroke }: Props) => {
   return (
-    <div className={`absolute z- ${className}`}>
+    <div className={`absolute ${className}`}>
       <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <pattern

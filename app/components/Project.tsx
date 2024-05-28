@@ -17,20 +17,24 @@ const Project = ({ projectName, para, imageAmount }: Props) => {
   };
 
   return (
-    <div className="px-4 w-full mt-8">
+    <div className="px-4 w-full mt-10">
       <h3 className="w-full text-center">{projectName}</h3>
       <div className="title text-center flex flex-col flex-wrap content-center">
         <div className="separate-line w-52 mt-2"></div>
       </div>
 
-      <div className="2xl:w- col1 flex justify-center">
+      <div className={`2xl:w- col1 flex ${paraState ? "justify-center" : ""}`}>
         <div className="xl:w-fit pr-12 flex flex-col h-80">
-          <div className="project-header flex mt-4 h-80">
+          <div
+            className={`project-header flex mt-4 ${paraState && "h-92"} h-80`}
+          >
             <div className="flex flex-col ">
-              {paraState == true ? (
+              {paraState === true ? (
                 <p className="lg:w-96 md:w-80 p-5">{para}</p>
               ) : (
-                <p className=" md:w-80 p-5">{para}</p>
+                <p className={` md:w-80 p-5 ${paraState ? "left-0" : ""}`}>
+                  {para}
+                </p>
               )}
 
               <div id="container" className="ml-3">
@@ -48,28 +52,31 @@ const Project = ({ projectName, para, imageAmount }: Props) => {
                 </button>
               </div>
             </div>
-
-            <img
-              src={`${projectName}/forside.png`}
-              alt="Magazine cover"
-              className="h-full w-auto mx-2"
-            />
-
-            {paraState &&
-              Array.from(
-                { length: imageAmount },
-                (_, i) => (
-                  console.log(i + 1),
-                  (
-                    <img
-                      key={i}
-                      src={`${projectName}/${i + 1}.jpg`}
-                      alt={`Image ${i + 1}`}
-                      className="mx-2 w-auto h-full "
-                    />
-                  )
-                )
-              )}
+            <div className="flex relative">
+              <img
+                src={`${projectName}/forside.png`}
+                alt="Magazine cover"
+                className="h-full w-auto mx-2"
+              />
+              <div
+                className={`flex h-80 w-fit ${
+                  paraState == true ? "right-0" : "right-5"
+                } absolute`}
+              >
+                {Array.from({ length: imageAmount }, (_, i) => (
+                  <img
+                    key={i}
+                    src={`${projectName}/${i + 1}.jpg`}
+                    alt={`Image ${i + 1}`}
+                    className={`transition mx-1 w-auto h-full ${
+                      paraState == true
+                        ? "z-1 ml-20 opacity-100"
+                        : "z- opacity-100"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
 
             {/* <img
               src={`${projectName}/${index + 1}.jpg`}
