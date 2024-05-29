@@ -46,10 +46,12 @@ body {
   color: var(--foreground);
   background: var(--background);
   position: relative;
+  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .transition {
@@ -59,6 +61,12 @@ html {
 .z- {
   z-index: -10;
 }
+
+.ml--full {
+  margin-left: -100%;
+}
+
+
 
 .karm {
   position: fixed;
